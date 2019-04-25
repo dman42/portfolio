@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Page</title> <!--Title of the page.-->
+    <meta charset="utf-8">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet"> <!--Link to the FontAwesome font -->
+    <link href="main.css" type="text/css" rel="stylesheet"><!--Link to the main css stylesheet-->
+    <link rel="stylesheet" type="text/css" href="ie.css"><!--Link to css styling for Internet Explorer-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR0LF2vwEdAf-jQDa5FuDFi9B2H5SYMrU">
+    </script>
+    <script type="text/javascript" src="main.js"></script><!--Link to the main javascript code -->
+</head>
+<body>
+<!--The header of the page, containing the title,
+    tagline, wi-fi icon, and username if logged in. -->
+<div class="header">
+    <div>
+        <img src="img/wifi.png" height="100" width="100" alt="wifiIcon">
+    </div>
+
+    <div>
+        <div>
+            <h1>Brisbane Hot-Spot Finder</h1>
+        </div>
+
+        <div>
+            <h3>This is where we will put an awesome tagline for the website.</h3>
+        </div>
+    </div>
+
+    <div>
+        <p>Hi (username)!</p>
+    </div>
+</div>
+
+<!--Line that divides header and navigation menu-->
+<hr>
+
+
+<!--Navigation menu icon-->
+<div id="hamburger" onclick="toggleMenu();">
+    <img src="img/hamburger.png" alt="menu icon" height="20" width="20">
+</div>
+
+
+<!--Navigation menu that contains links to all the other important html pages. -->
+<div class="nav-menu">
+    <div class="menu-button" id="search">
+        <a href="SearchPage.html">SEARCH</a>
+    </div>
+    <div class="menu-button" id="register">
+        <a href="Registration.html">REGISTER</a>
+    </div>
+    <div class="menu-button" id="login">
+        <a href="Login.html">LOGIN</a>
+    </div>
+</div>
+
+<!--Main content area of the page. -->
+<div class="search-options">
+
+    <h1>Search Hot-spots </h1>
+
+    <!--Contains a drop-down list contaning each searchable suburb.-->
+    <div>
+        <p>Suburb:</p>
+        <select>
+            <option value="annerley">Annerley</option>
+            <option value="ascot">Ascot</option>
+            <option value="ashgrove">Ashgrove</option>
+            <option value="banyo">Banyo</option>
+            <option value="bellbowrie">Bellbowrie</option>
+            <option value="bracken-ridge">Bracken Ridge</option>
+            <option value="brisbane">Brisbane</option>
+            <option value="calamvale">Calamvale</option>
+            <option value="carina">Carina</option>
+            <option value="carindale">Carindale</option>
+            <option value="chermside">Chermside</option>
+            <option value="clayfield">Clayfield</option>
+            <option value="coopers-plains">Coopers Plains</option>
+            <option value="corinda">Corinda</option>
+            <option value="everton-park">Everton Park</option>
+            <option value="fairfield">Fairfield</option>
+            <option value="fitzgibbon">Fitzgibbon</option>
+            <option value="forest-lake">Forest Lake</option>
+            <option value="grange">Grange</option>
+            <option value="hamilton">Hamilton</option>
+            <option value="holland-park">Holland Park</option>
+            <option value="holland-park-west">Holland Park West</option>
+            <option value="inala">Inala</option>
+            <option value="indooroopilly">Indooroopilly</option>
+            <option value="kenmore">Kenmore</option>
+            <option value="macgregor">MacGregor</option>
+            <option value="mitchelton">Mitchelton</option>
+            <option value="mt-gravatt">Mt Gravatt</option>
+            <option value="mt-ommaney">Mt Ommaney</option>
+            <option value="new-farm">New Farm</option>
+            <option value="nundah">Nundah</option>
+            <option value="paddington">Paddington</option>
+            <option value="sandgate">Sandgate</option>
+            <option value="seventeen-mile-rocks">Seventeen Mile Rocks</option>
+            <option value="st-lucia">St Lucia</option>
+            <option value="stones-corner">Stones Corner</option>
+            <option value="sunnybank-hills">Sunnybank Hills</option>
+            <option value="toowong">Toowong</option>
+            <option value="upper-mount-gravatt">Upper Mount Gravatt</option>
+            <option value="west-end">West End</option>
+            <option value="wynnum">Wynnum</option>
+            <option value="zillmere">Zillmere</option>
+        </select>
+    </div>
+
+
+    <!--Contains a search bar to search the name of a hotspot with.-->
+    <div>
+        <p>Name:</p>
+        <input type="text" placeholder="Search...">
+    </div>
+
+
+    <!--Contains a "star rating" radiomenu to search for hotspots with similar ratings.-->
+    <div>
+        <p>Rating:</p>
+        <div class="stars">
+            <div class="star-rating__wrap">
+                <input class="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5">
+                <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 out of 5 stars"></label>
+                <input class="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4">
+                <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 out of 5 stars"></label>
+                <input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3">
+                <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 out of 5 stars"></label>
+                <input class="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2">
+                <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 out of 5 stars"></label>
+                <input class="star-rating__input" id="star-rating-1" type="radio" name="rating" value="1">
+                <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 out of 5 stars"></label>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Contains a button that will show the hotspots closest to you based on geolocation.-->
+    <div>
+        <p>Distance:</p>
+        <!-- Temporariley redirects to a page that contains nearest hotspots-->
+        <button type="button" id="myLocationButton" onclick="window.location.href='NearestResultsPage.html'">Use My
+            Location
+        </button>
+    </div>
+
+    <!-- Search button - currently takes you to the results page-->
+    <button type="button" id="searchButton" onclick="window.location.href='ResultsPage.html'">Search</button>
+
+    <!-- Error message that appears when a validation error occurs. -->
+    <div id="errormessage"></div>
+
+</div>
+
+
+<!--The footer of the page, containing authorship information.-->
+<div class="footer">
+    <p>Website created by David McClarty (n9939768) and Valentina Musat (n10095934)</p>
+    <p>For CAB230 Website Assignment</p>
+    <p>At QUT. 11/03/2018</p>
+</div>
+
+</body>
+</html>

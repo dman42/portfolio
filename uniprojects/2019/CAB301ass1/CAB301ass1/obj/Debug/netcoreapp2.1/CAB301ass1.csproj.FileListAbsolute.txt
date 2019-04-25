@@ -1,0 +1,11 @@
+C:\uni_stuff\CAB301\CAB301ass1\CAB301ass1\bin\Debug\netcoreapp2.1\CAB301ass1.deps.json
+C:\uni_stuff\CAB301\CAB301ass1\CAB301ass1\bin\Debug\netcoreapp2.1\CAB301ass1.runtimeconfig.json
+C:\uni_stuff\CAB301\CAB301ass1\CAB301ass1\bin\Debug\netcoreapp2.1\CAB301ass1.runtimeconfig.dev.json
+C:\uni_stuff\CAB301\CAB301ass1\CAB301ass1\bin\Debug\netcoreapp2.1\CAB301ass1.dll
+C:\uni_stuff\CAB301\CAB301ass1\CAB301ass1\bin\Debug\netcoreapp2.1\CAB301ass1.pdb
+C:\uni_stuff\CAB301\CAB301ass1\CAB301ass1\obj\Debug\netcoreapp2.1\CAB301ass1.csprojAssemblyReference.cache
+C:\uni_stuff\CAB301\CAB301ass1\CAB301ass1\obj\Debug\netcoreapp2.1\CAB301ass1.csproj.CoreCompileInputs.cache
+C:\uni_stuff\CAB301\CAB301ass1\CAB301ass1\obj\Debug\netcoreapp2.1\CAB301ass1.AssemblyInfoInputs.cache
+C:\uni_stuff\CAB301\CAB301ass1\CAB301ass1\obj\Debug\netcoreapp2.1\CAB301ass1.AssemblyInfo.cs
+C:\uni_stuff\CAB301\CAB301ass1\CAB301ass1\obj\Debug\netcoreapp2.1\CAB301ass1.dll
+C:\uni_stuff\CAB301\CAB301ass1\CAB301ass1\obj\Debug\netcoreapp2.1\CAB301ass1.pdb

@@ -1,0 +1,19 @@
+import java.util.HashMap;
+
+/**
+ * Abstract class that hold the capacity for each kind of truck, 
+ * and the neccesary functions for each kind of truck.
+ * 
+ * @author David McClarty
+ */
+public abstract class Truck {
+    static int coldTruckCap = 800; // Capacity for refrigerated truck
+    static int ordTruckCap = 1000; // Capacity for ordinary truck
+
+    abstract void setCost(); // Setter for the cost of each truck
+    abstract double getCost(); // Getter for the cost of each truck
+    abstract void addCargo(Item item, int quantity) throws DeliveryException; // Adding items and a quantity to a truck
+    abstract HashMap<Item, Integer> getCargo(); // Obtains a truck's cargo
+    abstract int getCargoCount(); // Gets the count of items in a truck
+    abstract Double getTemperature(); // Gets the truck's temperature
+}

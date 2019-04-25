@@ -1,0 +1,99 @@
+import java.util.HashMap;
+
+/**
+ * Class for trucks that holds refrigerated items. Keeps track of its cargo,
+ * the cost based on item amount, and the tempearture of the truck.
+ * 
+ * @author David McClarty
+ */
+public class FridgeTruck extends Truck {
+
+    /**
+	 * Constructor for the OrdinaryTruck object. Does nothing.
+	 */
+    public FridgeTruck() {}
+
+    /**
+     * Sets the truck's temperature.
+     * 
+     * @param temperature Temperature to set the truck to.
+     */
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
+
+    /**
+     * Returns the temperature of the truck.
+     * 
+     * @return The temperature of the truck.
+     */
+    @Override
+    public Double getTemperature() {
+        return temperature;
+    }
+
+    /**
+     * Sets the truck's cost based on the truck's temperature.
+     */
+    @Override
+    void setCost() {
+        cost = 900 + (200 * (Math.pow(0.7, (getTemperature()/5.0))));
+    }
+
+    /**
+     * Returns the truck's cost.
+     * @return The truck's cost.
+     */
+    @Override
+    double getCost() {
+        return cost;
+    }
+
+    /**
+     * Used to add an item to the truck's cargo. If an item enters the truck that is colder 
+     * than the trucks temperature, automatically sets the truck's temperature to match. 
+     * Updates cost afterwards. 
+     * 
+     * Calls a DeliveryException if the item amount would fill the truck past its carrying capacity.
+     * 
+     * @param item The item to be added.
+     * @param quantity The quantity of the item to be added.
+     */
+    @Override
+    void addCargo(Item item, int quantity) throws DeliveryException {
+    	if ((getCargoCount() + quantity) > coldTruckCap) {
+    		throw new DeliveryException(); 
+    	}
+    	cargo.put(item, quantity);
+    	if (item.getMaxTemp() != null) {
+	    	if ((getTemperature() == null) || (getTemperature().doubleValue() > item.getMaxTemp().doubleValue())) {
+	    		setTemperature(item.getMaxTemp().doubleValue());
+	        	setCost();
+	    	}
+    	}
+    }
+
+    /**
+     * Returns the truck's cargo.
+     * 
+     * @return The truck's cargo
+     */
+    @Override
+    HashMap<Item, Integer> getCargo() {
+        return cargo;
+    }
+
+    /**
+     * Returns the amount of items in the truck's cargo.
+     * 
+     * @return The amount of items in the truck's cargo.
+     */
+    @Override
+    int getCargoCount() {
+    	int totalQuantity = 0;
+    	for (HashMap.Entry<Item, Integer> item : cargo.entrySet()) {
+    		totalQuantity += item.getValue();
+    	}
+        return totalQuantity;
+    }
+}

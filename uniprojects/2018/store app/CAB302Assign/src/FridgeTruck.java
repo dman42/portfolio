@@ -1,0 +1,55 @@
+import java.util.HashMap;
+
+/**
+ * Class for trucks that holds refrigerated items. Keeps track of its cargo,
+ * the cost based on item amount, and the tempearture of the truck.
+ * 
+ * @author David McClarty
+ */
+public class FridgeTruck extends Truck {
+    /**
+	 * Constructor for the OrdinaryTruck object. Does nothing.
+	 */
+    public FridgeTruck() {}
+
+    /**
+     * Sets the truck's temperature.
+     * 
+     * @param temperature Temperature to set the truck to.
+     */
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
+
+    /**
+     * Sets the truck's cost based on the truck's temperature.
+     */
+    @Override
+    void setCost() {
+        cost = 900 + (200 * (Math.pow(0.7, (getTemperature()/5.0))));
+    }
+
+    /**
+     * Used to add an item to the truck's cargo. If an item enters the truck that is colder 
+     * than the trucks temperature, automatically sets the truck's temperature to match. 
+     * Updates cost afterwards. 
+     * 
+     * Calls a DeliveryException if the item amount would fill the truck past its carrying capacity.
+     * 
+     * @param item The item to be added.
+     * @param quantity The quantity of the item to be added.
+     */
+    @Override
+    void addCargo(Item item, int quantity) throws DeliveryException {
+    	if ((getCargoCount() + quantity) > coldTruckCap) {
+    		throw new DeliveryException(); 
+    	}
+    	cargo.put(item, quantity);
+    	if (item.getMaxTemp() != null) {
+	    	if ((getTemperature() == null) || (getTemperature().doubleValue() > item.getMaxTemp().doubleValue())) {
+	    		setTemperature(item.getMaxTemp().doubleValue());
+	        	setCost();
+	    	}
+    	}
+    }
+}

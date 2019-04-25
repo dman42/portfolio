@@ -1,0 +1,11 @@
+C:\Users\davoi\source\repos\CAB301ass2\CAB301ass2\bin\Debug\netcoreapp2.1\CAB301ass2.deps.json
+C:\Users\davoi\source\repos\CAB301ass2\CAB301ass2\bin\Debug\netcoreapp2.1\CAB301ass2.runtimeconfig.json
+C:\Users\davoi\source\repos\CAB301ass2\CAB301ass2\bin\Debug\netcoreapp2.1\CAB301ass2.runtimeconfig.dev.json
+C:\Users\davoi\source\repos\CAB301ass2\CAB301ass2\bin\Debug\netcoreapp2.1\CAB301ass2.dll
+C:\Users\davoi\source\repos\CAB301ass2\CAB301ass2\bin\Debug\netcoreapp2.1\CAB301ass2.pdb
+C:\Users\davoi\source\repos\CAB301ass2\CAB301ass2\obj\Debug\netcoreapp2.1\CAB301ass2.csprojAssemblyReference.cache
+C:\Users\davoi\source\repos\CAB301ass2\CAB301ass2\obj\Debug\netcoreapp2.1\CAB301ass2.csproj.CoreCompileInputs.cache
+C:\Users\davoi\source\repos\CAB301ass2\CAB301ass2\obj\Debug\netcoreapp2.1\CAB301ass2.AssemblyInfoInputs.cache
+C:\Users\davoi\source\repos\CAB301ass2\CAB301ass2\obj\Debug\netcoreapp2.1\CAB301ass2.AssemblyInfo.cs
+C:\Users\davoi\source\repos\CAB301ass2\CAB301ass2\obj\Debug\netcoreapp2.1\CAB301ass2.dll
+C:\Users\davoi\source\repos\CAB301ass2\CAB301ass2\obj\Debug\netcoreapp2.1\CAB301ass2.pdb

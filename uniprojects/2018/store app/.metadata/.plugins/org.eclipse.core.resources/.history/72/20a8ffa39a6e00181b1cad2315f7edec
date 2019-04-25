@@ -1,0 +1,77 @@
+import java.util.HashMap;
+
+/**
+ * Trucks that holds non-refrigerated items. Keeps track of its cargo and the cost based on item amount.
+ * 
+ * @author David McClarty
+ */
+public class OrdinaryTruck extends Truck {
+
+    /**
+	 * Constructor for the OrdinaryTruck object. Does nothing.
+	 */
+    public OrdinaryTruck() {}
+
+    /**
+     * Sets the truck's cost based on the amount of items it has.
+     */
+    @Override
+    void setCost() {
+    	cost = 750 + (0.25 * getCargoCount());
+    }
+
+    /**
+     * Returns the truck's cost.
+     * @return The truck's cost.
+     */
+    @Override
+    double getCost() {
+        return cost;
+    }
+
+    /**
+     * Used to add an item to the truck's cargo. Updates cost afterwards. 
+     * 
+     * Calls a DeliveryException if the item needs to be refrigerated, or 
+     * adding it would fill the truck past its carrying capacity.
+     * 
+     * @param item The item to be added.
+     * @param quantity The quantity of the item to be added.
+     */
+    @Override
+    void addCargo(Item item, int quantity) throws DeliveryException {
+    	if (item.getMaxTemp() != null) { // If there is a temperature requirement, throw an exception
+    		throw new DeliveryException(); 
+    	}
+
+    	if ((getCargoCount() + quantity) > ordTruckCap) { // If there is no room, throw an exception
+    		throw new DeliveryException(); 
+    	}
+    	cargo.put(item, quantity); // Add the item and specified quantity to cargo
+    	setCost();
+    }
+    
+    /**
+     * Returns the truck's cargo.
+     * 
+     * @return The truck's cargo
+     */
+    @Override
+    HashMap<Item, Integer> getCargo() {
+        return cargo;
+    }
+
+    /**
+     * Returns the amount of items in the truck's cargo.
+     * 
+     * @return The amount of items in the truck's cargo.
+     */
+    @Override
+    int getCargoCount() {
+    	int totalQuantity = 0;
+    	for (HashMap.Entry<Item, Integer> item : cargo.entrySet()) {
+    		totalQuantity += item.getValue();
+    	}
+        return totalQuantity;
+    }
+}

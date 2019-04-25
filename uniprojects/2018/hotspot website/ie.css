@@ -1,0 +1,103 @@
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    /* IE10+ specific styles go here */
+    html {
+        display: flex;
+    }
+
+    /*fix such that the html and body take up all the available height*/
+    /*source: https://stackoverflow.com/questions/6654958/make-body-have-100-of-the-browser-height*/
+    html, body{
+        min-height:100%;
+        overflow:auto;
+    }
+
+    /*distribute free space between elements of header and navigation menu*/
+    .header{
+        justify-content: space-around;
+    }
+    .nav-menu {
+        justify-content: space-around;  /*the only one available in IE*/
+    }
+
+    /*LOGIN PAGE styling ---------------------------------------------------------------------------------------------*/
+    /*set width of Login contents to all available space, but not above 300px -> will center the contents*/
+    .login-area {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .login-area input{
+        width: 175px;  /*set size of username and password inputs*/
+    }
+
+    /*REGISTER PAGE styling ------------------------------------------------------------------------------------------*/
+    /*set width of Registration contents to all available space, but not above 400px -> will center the contents*/
+    .registration-area{
+        max-width: 400px;
+        width: 100%;
+    }
+
+
+    /*SEARCH PAGE styling --------------------------------------------------------------------------------------------*/
+    /*set width of Search hotspot to all available space, but not above 300px -> will center the contents*/
+    .search-options{
+        max-width: 300px;
+        width: 100%;
+    }
+    #searchForm{
+        width: 500px;
+    }
+    #searchButton{
+        margin-left: 25%;
+    }
+
+
+
+    /*ITEM PAGE styling ----------------------------------------------------------------------------------------------*/
+    /*set width of Item hotspot page to all available space, but not above 700px -> will center the contents*/
+    .item-details{
+        max-width: 700px;
+        width: 100%;
+        flex: 1 0 auto;
+    }
+
+    .details{
+        width: 330px;
+    }
+
+    #map-hotspot{
+        width: 260px;
+    }
+
+    /*submit review area now aligns with hotspot details div above it*/
+    .submitreview{
+        width: 86%;
+    }
+
+}
+
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) and (max-width: 820px){
+    /*set width of review submission area variable for widths below 820px*/
+    .submitreview{
+        width: 80%;
+    }
+    .review > .comment{
+        max-width: 100%;
+    }
+    /*display header elements from top to bottom and center text for widths below 820*/
+    .header{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) and (max-width: 1320px) {
+    #hotspots {
+        flex-direction: column-reverse; /*place map on top of list of hotspots*/
+        width: 400px;
+    }
+
+
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results Page</title> <!--Title of the page.-->
+    <meta charset="utf-8">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet"> <!--Link to the FontAwesome font -->
+    <link href="main.css" type="text/css" rel="stylesheet"><!--Link to the main css stylesheet-->
+    <link rel="stylesheet" type="text/css" href="ie.css"><!--Link to css styling for Internet Explorer-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR0LF2vwEdAf-jQDa5FuDFi9B2H5SYMrU">
+    </script>
+    <script type="text/javascript" src="main.js"></script><!--Link to the main javascript code -->
+    <!-- API AIzaSyAR0LF2vwEdAf-jQDa5FuDFi9B2H5SYMrU  -->
+</head>
+<body onload="initMap(hotspots, 'map-hotspots');">
+<!--The header of the page, containing the title,
+tagline, wi-fi icon, and username if logged in. -->
+<div class="header">
+    <div>
+        <img src="img/wifi.png" height="100" width="100" alt="wifiIcon">
+    </div>
+
+    <div>
+        <div>
+            <h1>Brisbane Hot-Spot Finder</h1>
+        </div>
+
+        <div>
+            <h3>This is where we will put an awesome tagline for the website.</h3>
+        </div>
+    </div>
+
+    <div>
+        <p>Hi (username)!</p>
+    </div>
+</div>
+
+<!--Line that divides header and navigation menu-->
+<hr>
+
+
+<!--Navigation menu icon-->
+<div id="hamburger" onclick="toggleMenu();">
+    <img src="img/hamburger.png" alt="menu icon" height="20" width="20">
+</div>
+
+
+<!--Navigation menu that contains links to all the other important html pages. -->
+<div class="nav-menu">
+    <div class="menu-button" id="search">
+        <a href="SearchPage.html">SEARCH</a>
+    </div>
+    <div class="menu-button" id="register">
+        <a href="Registration.html">REGISTER</a>
+    </div>
+    <div class="menu-button" id="login">
+        <a href="Login.html">LOGIN</a>
+    </div>
+</div>
+
+<!--Main content area of the page. -->
+<div class="search-results">
+
+    <div id="results-title">
+        <h2>Search results for: Toowong </h2>
+        <a href="SearchPage.html">&lt; Try Again</a>
+    </div>
+
+    <div id="hotspots">
+
+
+        <!-- This is the div that contains the information of all the retrieved hotspots-->
+        <div class="retrieved-hotspots">
+            <!-- The entry for each search result, with the name in big letters,
+        followed by the rating and address of the hotspot.-->
+            <div class="entry">
+                <a href="ItemPage.html"><h3>Brisbane Botanic Gardens</h3></a>
+                <div>
+                    <div class="stars">
+                        <div class="star-rating__wrap" title="3 out of 5 stars">
+                            <label class="star-static fa fa-star-o fa-lg"></label>
+                            <label class="star-static fa fa-star-o fa-lg"></label>
+                            <label class="star-static fa fa-star fa-lg"></label>
+                            <label class="star-static fa fa-star fa-lg"></label>
+                            <label class="star-static fa fa-star fa-lg"></label>
+                        </div>
+                    </div>
+                    <p>Mt Coot-tha Road, Toowong 4066</p>
+                </div>
+
+            </div>
+
+            <!-- The entry for each search result, with the name in big letters,
+            followed by the rating and address of the hotspot.-->
+            <div class="entry">
+                <a href=""><h3>Mt Cootha Botanic Gardens Library Wifi</h3></a>
+                <div>
+                    <div class="stars">
+                        <div class="star-rating__wrap" title="5 out of 5 stars">
+                            <label class="star-static fa fa-star fa-lg"></label>
+                            <label class="star-static fa fa-star fa-lg"></label>
+                            <label class="star-static fa fa-star fa-lg"></label>
+                            <label class="star-static fa fa-star fa-lg"></label>
+                            <label class="star-static fa fa-star fa-lg"></label>
+                        </div>
+                    </div>
+                    <p>Administration Building, Brisbane Botanic Gardens (Mt Coot-tha), Mt Coot-tha Road, Toowong
+                        4066</p>
+                </div>
+            </div>
+
+            <!-- The entry for each search result, with the name in big letters,
+            followed by the rating and address of the hotspot.-->
+            <div class="entry">
+                <a href=""><h3>Toowong Library Wifi</h3></a>
+                <div>
+                    <div class="stars">
+                        <div class="star-rating__wrap" title="1 out of 5 stars">
+                            <label class="star-static fa fa-star-o fa-lg"></label>
+                            <label class="star-static fa fa-star-o fa-lg"></label>
+                            <label class="star-static fa fa-star-o fa-lg"></label>
+                            <label class="star-static fa fa-star-o fa-lg"></label>
+                            <label class="star-static fa fa-star fa-lg"></label>
+                        </div>
+                    </div>
+                    <p>Toowong Village Shopping Centre, Sherwood Road, Toowong 4066</p>
+                </div>
+            </div>
+        </div>
+
+        <!--This is the map of retrieved hotspots-->
+        <div id="map-hotspots">
+        </div>
+    </div>
+    <!-- Error message that appears when a search error occurs. -->
+    <div id="errormessage"></div>
+</div>
+
+
+<!--The footer of the page, containing authorship information.-->
+<div class="footer">
+    <p>Website created by David McClarty (n9939768) and Valentina Musat (n10095934)</p>
+    <p>For CAB230 Website Assignment</p>
+    <p>At QUT. 11/03/2018</p>
+</div>
+
+</body>
+</html>
